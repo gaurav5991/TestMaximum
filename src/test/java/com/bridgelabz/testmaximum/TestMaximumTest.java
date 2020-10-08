@@ -149,4 +149,24 @@ public class TestMaximumTest {
         System.out.println("The Maximum String: " + maximumString);
         Assert.assertEquals("Peach", maximumString);
     }
+
+    /*Test Case to Find Maximum Using generics by Passing variable in Constructor*/
+    @Test
+    public void givenThreeIntegers_ifMaxIsFirstInteger_shouldReturnFirstNumberUsing() {
+        Integer maximumNumber = TestMaximum.findMaximumForMoreThanThree(10,40,20,45,10,5,42,55,100);
+        System.out.println("The Maximum Number: " + maximumNumber);
+        Assert.assertSame(100,maximumNumber);
+    }
+    @Test
+    public void givenThreeFloatNumbers_ifMaxIsThirdNumber_shouldReturnThirdNumberUsing() {
+        Float maximumNumber = TestMaximum.findMaximumForMoreThanThree(2.2f,4.5f,8.2f,1.4f,5.9f,2.5f,7.7f,8.5f,4.3f);
+        System.out.println("The Maximum Number: " + maximumNumber);
+        Assert.assertEquals(8.5F, maximumNumber, 0.0F);
+    }
+    @Test
+    public void givenThreeString_ifMaxIsThirdString_shouldReturnThirdStringUsing() {
+        String maximumString = TestMaximum.findMaximumForMoreThanThree("Apple","Orange","Banana","Guava","Grapes","Peach","StrawBerry");
+        System.out.println("The Maximum String: " + maximumString);
+        Assert.assertEquals("StrawBerry", maximumString);
+    }
 }

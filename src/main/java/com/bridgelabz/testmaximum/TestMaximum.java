@@ -1,5 +1,9 @@
 package com.bridgelabz.testmaximum;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class TestMaximum<T extends Comparable<T>> {
     T firstParameter, secondParameter, thirdParameter;
 
@@ -60,5 +64,12 @@ public class TestMaximum<T extends Comparable<T>> {
         if (thirdArg.compareTo(maximum) > 0)
             maximum = thirdArg;
         return maximum;
+    }
+
+    /*Find Maximum from more than three variable*/
+    public static <T extends Comparable<T>> T findMaximumForMoreThanThree(T... args) {
+        List<T> list = Arrays.asList(args);
+        Collections.sort(list);
+        return list.get(list.size() - 1);
     }
 }
