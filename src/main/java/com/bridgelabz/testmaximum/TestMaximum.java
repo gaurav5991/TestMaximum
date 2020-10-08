@@ -24,7 +24,7 @@ public class TestMaximum {
             maximum = thirdNumber;
         return maximum;
     }
-
+    /*Find Maximum String from given Strings*/
     public String findMaximumString(String firstWord, String secondWord, String thirdWord) {
         String maximum = firstWord;
         if(secondWord.compareTo(maximum)>0)
