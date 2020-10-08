@@ -55,4 +55,25 @@ public class TestMaximumTest {
         System.out.println("The Maximum Number: " + maximumNumber);
         Assert.assertEquals(9.5f, maximumNumber, 0.0f);
     }
+    /*Test Cases for Strings*/
+    @Test
+    public void givenThreeString_ifMaxIsFirstString_shouldReturnFirstString() {
+        String maximumString = testMaximum.findMaximumString("Peach", "Apple", "Banana");
+        System.out.println("The Maximum String: " + maximumString);
+        Assert.assertEquals("Peach", maximumString);
+    }
+
+    @Test
+    public void givenThreeStrings_ifMaxIsSecondString_shouldReturnSecondString() {
+        String maximumString = testMaximum.findMaximumString("Apple", "Peach", "Banana");
+        System.out.println("The Maximum String: " + maximumString);
+        Assert.assertEquals("Peach", maximumString);
+    }
+
+    @Test
+    public void givenThreeString_ifMaxIsThirdString_shouldReturnThirdString() {
+        String maximumString = testMaximum.findMaximumString("Apple", "Banana", "Peach");
+        System.out.println("The Maximum String: " + maximumString);
+        Assert.assertEquals("Peach", maximumString);
+    }
 }
