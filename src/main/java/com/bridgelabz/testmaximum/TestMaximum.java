@@ -54,6 +54,7 @@ public class TestMaximum<T extends Comparable<T>> {
 
     /*Find Maximum Using generics by Passing variable in Constructor*/
     public T testMaximum() {
+        printMax(firstParameter,secondParameter,thirdParameter,testMaximum(firstParameter,secondParameter,thirdParameter));
         return testMaximum(firstParameter, secondParameter, thirdParameter);
     }
 
@@ -71,5 +72,10 @@ public class TestMaximum<T extends Comparable<T>> {
         List<T> list = Arrays.asList(args);
         Collections.sort(list);
         return list.get(list.size() - 1);
+    }
+
+    /*Print Maximum Value Using Generics Method*/
+    public static <T> void printMax(T firstValue,T seconValue, T thirdValue, T maximum){
+        System.out.printf("Max of %s %s and %s is %s\n",firstValue,seconValue,thirdValue,maximum);
     }
 }
