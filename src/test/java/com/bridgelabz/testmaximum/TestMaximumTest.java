@@ -34,4 +34,25 @@ public class TestMaximumTest {
         System.out.println("The Maximum Number: " + maximumNumber);
         Assert.assertEquals(70, maximumNumber);
     }
+    /*Test Cases for Float Numbers*/
+    @Test
+    public void givenThreeFloatNumbers_ifMaxIsFirstNumber_shouldReturnFirstNumber() {
+        float maximumNumber = testMaximum.findMaximumFloatNumber(9.5F, 5.5F, 2.5F);
+        System.out.println("The Maximum Number: " + maximumNumber);
+        Assert.assertEquals(9.5f, maximumNumber, 0.0f);
+    }
+
+    @Test
+    public void givenThreeFloatNumbers_ifMaxIsSecondNumber_shouldReturnSecondNumber() {
+        float maximumNumber = testMaximum.findMaximumFloatNumber(2.5F, 9.5F, 5.5F);
+        System.out.println("The Maximum Number: " + maximumNumber);
+        Assert.assertEquals(9.5f, maximumNumber, 0.0f);
+    }
+
+    @Test
+    public void givenThreeFloatNumbers_ifMaxIsThirdNumber_shouldReturnThirdNumber() {
+        float maximumNumber = testMaximum.findMaximumFloatNumber(2.5F, 5.5F, 9.5F);
+        System.out.println("The Maximum Number: " + maximumNumber);
+        Assert.assertEquals(9.5f, maximumNumber, 0.0f);
+    }
 }
