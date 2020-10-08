@@ -1,45 +1,64 @@
 package com.bridgelabz.testmaximum;
 
-public class TestMaximum {
+public class TestMaximum<T extends Comparable<T>> {
+    T firstParameter, secondParameter, thirdParameter;
+
+    public TestMaximum(T firstParameter, T secondParameter, T thirdParameter) {
+        this.firstParameter = firstParameter;
+        this.secondParameter = secondParameter;
+        this.thirdParameter = thirdParameter;
+    }
+
+    public TestMaximum() {
+    }
+
     /*Welcome Message*/
     public boolean printWelcomeMessage() {
         System.out.println("Welcome to Test maximum Number Program");
         return true;
     }
+
     /*Find Maximum Integer from given Integers*/
-    public int findMaximumNumber(Integer firstNumber,Integer secondNumber, Integer thirdNumber){
+    public int findMaximumNumber(Integer firstNumber, Integer secondNumber, Integer thirdNumber) {
         Integer maximum = firstNumber;
-        if(secondNumber.compareTo(maximum)>0)
+        if (secondNumber.compareTo(maximum) > 0)
             maximum = secondNumber;
-        if(thirdNumber.compareTo(maximum)>0)
+        if (thirdNumber.compareTo(maximum) > 0)
             maximum = thirdNumber;
         return maximum;
     }
+
     /*Find Maximum Float from given Float Numbers*/
-    public float findMaximumFloatNumber(Float firstNumber,Float secondNumber, Float thirdNumber){
+    public float findMaximumFloatNumber(Float firstNumber, Float secondNumber, Float thirdNumber) {
         Float maximum = firstNumber;
-        if(secondNumber.compareTo(maximum)>0)
+        if (secondNumber.compareTo(maximum) > 0)
             maximum = secondNumber;
-        if(thirdNumber.compareTo(maximum)>0)
+        if (thirdNumber.compareTo(maximum) > 0)
             maximum = thirdNumber;
         return maximum;
     }
+
     /*Find Maximum String from given Strings*/
     public String findMaximumString(String firstWord, String secondWord, String thirdWord) {
         String maximum = firstWord;
-        if(secondWord.compareTo(maximum)>0)
+        if (secondWord.compareTo(maximum) > 0)
             maximum = secondWord;
-        if(thirdWord.compareTo(maximum)>0)
+        if (thirdWord.compareTo(maximum) > 0)
             maximum = thirdWord;
         return maximum;
     }
-    /*Generic Method to find Maximum for All Objects*/
-    public <T extends Comparable<T>> T findMaximum(T FirstParameter,T SecondParameter,T ThirdParameter){
-        T maximum = FirstParameter;
-        if(SecondParameter.compareTo(maximum)>0)
-            maximum = SecondParameter;
-        if(ThirdParameter.compareTo(maximum)>0)
-            maximum = ThirdParameter;
+
+    /*Find Maximum Using generics by Passing variable in Constructor*/
+    public T testMaximum() {
+        return testMaximum(firstParameter, secondParameter, thirdParameter);
+    }
+
+    public static <T extends Comparable<T>> T testMaximum(T firstArg, T secondArg, T thirdArg) {
+        T maximum = firstArg;
+        if (secondArg.compareTo(maximum) > 0)
+            maximum = secondArg;
+        if (thirdArg.compareTo(maximum) > 0)
+            maximum = thirdArg;
         return maximum;
     }
 }

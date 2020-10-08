@@ -13,6 +13,7 @@ public class TestMaximumTest {
         boolean welcomeMessage = testMaximum.printWelcomeMessage();
         Assert.assertTrue(welcomeMessage);
     }
+
     /*Test Cases for Integer Numbers*/
     @Test
     public void givenThreeIntegers_ifMaxIsFirstInteger_shouldReturnFirstNumber() {
@@ -79,63 +80,72 @@ public class TestMaximumTest {
     /*Test Cases for Integer Numbers*/
     @Test
     public void givenThreeIntegers_ifMaxIsFirstInteger_shouldReturnFirstNumberUsingGenerics() {
-        Integer maximumNumber = testMaximum.findMaximum(60, 30, 30);
+        TestMaximum<Integer> integerTestMaximum = new TestMaximum<>(100, 50, 80);
+        Integer maximumNumber = integerTestMaximum.testMaximum();
         System.out.println("The Maximum Number: " + maximumNumber);
-        Assert.assertSame(60,maximumNumber);
+        Assert.assertSame(100,maximumNumber);
     }
 
     @Test
     public void givenThreeIntegers_ifMaxIsSecondInteger_shouldReturnSecondNumberUsingGenerics() {
-        Integer maximumNumber = testMaximum.findMaximum(30, 80, 30);
+        TestMaximum<Integer> integerTestMaximum = new TestMaximum<>(30, 80, 50);
+        Integer maximumNumber = integerTestMaximum.testMaximum();
         System.out.println("The Maximum Number: " + maximumNumber);
         Assert.assertSame(80,maximumNumber);
     }
 
     @Test
     public void givenThreeIntegers_ifMaxIsThirdInteger_shouldReturnThirdNumberUsingGenerics() {
-        Integer maximumNumber = testMaximum.findMaximum(30, 10, 70);
+        TestMaximum<Integer> integerTestMaximum = new TestMaximum<>(30, 40, 50);
+        Integer maximumNumber =integerTestMaximum.testMaximum();
         System.out.println("The Maximum Number: " + maximumNumber);
-        Assert.assertSame(70,maximumNumber);
+        Assert.assertSame(50,maximumNumber);
     }
     /*Test Cases for Float Numbers*/
     @Test
     public void givenThreeFloatNumbers_ifMaxIsFirstNumber_shouldReturnFirstNumberUsingGenerics() {
-        Float maximumNumber = testMaximum.findMaximum(9.5F, 5.5F, 2.5F);
+        TestMaximum<Float> floatTestMaximum = new TestMaximum<>(9.5F, 5.5F, 2.5F);
+        Float maximumNumber = floatTestMaximum.testMaximum();
         System.out.println("The Maximum Number: " + maximumNumber);
         Assert.assertEquals(9.5F, maximumNumber, 0.0F);
     }
 
     @Test
     public void givenThreeFloatNumbers_ifMaxIsSecondNumber_shouldReturnSecondNumberUsingGenerics() {
-        Float maximumNumber = testMaximum.findMaximum(2.5F, 9.5F, 5.5F);
+        TestMaximum<Float> floatTestMaximum = new TestMaximum<>(2.5F, 9.5F, 5.5F);
+        Float maximumNumber = floatTestMaximum.testMaximum();
         System.out.println("The Maximum Number: " + maximumNumber);
         Assert.assertEquals(9.5F, maximumNumber, 0.0F);
     }
 
     @Test
     public void givenThreeFloatNumbers_ifMaxIsThirdNumber_shouldReturnThirdNumberUsingGenerics() {
-        Float maximumNumber = testMaximum.findMaximum(2.5F, 5.5F, 9.5F);
+        TestMaximum<Float> floatTestMaximum = new TestMaximum<>(2.5F, 5.5F, 9.5F);
+        Float maximumNumber = floatTestMaximum.testMaximum();
         System.out.println("The Maximum Number: " + maximumNumber);
         Assert.assertEquals(9.5F, maximumNumber, 0.0F);
     }
     /*Test Cases for Strings*/
     @Test
     public void givenThreeString_ifMaxIsFirstString_shouldReturnFirstStringUsingGenerics() {
-        String  maximumString = testMaximum.findMaximum("Peach", "Apple", "Banana");
+        TestMaximum<String> stringTestMaximum = new TestMaximum<>("Peach", "Apple", "Banana");
+        String  maximumString = stringTestMaximum.testMaximum();
         System.out.println("The Maximum String: " + maximumString);
         Assert.assertEquals("Peach",maximumString);
     }
 
     @Test
     public void givenThreeStrings_ifMaxIsSecondString_shouldReturnSecondStringUsingGenerics() {
-        String  maximumString = testMaximum.findMaximum("Apple", "Peach", "Banana");
+        TestMaximum<String> stringTestMaximum = new TestMaximum<>("Apple", "Peach", "Banana");
+        String  maximumString = stringTestMaximum.testMaximum();
         System.out.println("The Maximum String: " + maximumString);
         Assert.assertEquals("Peach",maximumString);
     }
 
     @Test
     public void givenThreeString_ifMaxIsThirdString_shouldReturnThirdStringUsingGenerics() {
-        String maximumString = testMaximum.findMaximum("Apple", "Banana", "Peach");
+        TestMaximum<String> stringTestMaximum = new TestMaximum<>("Apple", "Banana", "Peach");
+        String maximumString = stringTestMaximum.testMaximum();
         System.out.println("The Maximum String: " + maximumString);
         Assert.assertEquals("Peach", maximumString);
     }
